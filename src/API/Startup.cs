@@ -9,7 +9,7 @@ using Tickmill.Integrations.Google.Core;
 
 
 namespace Google.API
-{
+{ 
     [ExcludeFromCodeCoverage]
     public class Startup : BaseStartup
     {
@@ -31,6 +31,7 @@ namespace Google.API
         protected override void OnServicesConfigured(IServiceCollection services)
         {
             base.OnServicesConfigured(services);
+            services.AddSingleton<IDataSeeder, EmptyDataSeeder>();
             services.AddCore();
             ConfigureTestServices(services);
         }
@@ -43,6 +44,10 @@ namespace Google.API
 
         protected virtual void ConfigureTestServices(IServiceCollection services)
         {
+        }
+        private class EmptyDataSeeder : IDataSeeder
+        {
+            public Task SeedAsync() => Task.CompletedTask;
         }
     }
 }

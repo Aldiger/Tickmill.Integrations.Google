@@ -1,14 +1,15 @@
 ﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Tickmill.Integrations.Google.Core.Integrations.Dto
 {
     public class GoogleAddressDetailComponentDto
     {
-        [JsonProperty("long_name")]
+        [JsonPropertyName("long_name")]
         public string LongName { get; set; }
-        [JsonProperty("short_name")]
+        [JsonPropertyName("short_name")]
         public string ShortName { get; set; }
-        [JsonProperty("types")]
+        [JsonPropertyName("types")]
         public List<string> Types { get; set; }
     }
 

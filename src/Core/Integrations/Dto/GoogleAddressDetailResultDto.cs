@@ -1,12 +1,13 @@
 ﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Tickmill.Integrations.Google.Core.Integrations.Dto
 {
     public class GoogleAddressDetailResultDto
     {
-        [JsonProperty("address_components")]
+        [JsonPropertyName("address_components")]
         public List<GoogleAddressDetailComponentDto> AddressComponents { get; set; }
-        [JsonProperty("formatted_address")]
+        [JsonPropertyName("formatted_address")]
         public string FormattedAddress { get; set; }
     }
 

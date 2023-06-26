@@ -3,5 +3,6 @@
     public class AddressDto
     {
         public string Name { get; set; }
+        public string PlaceId { get; set; }
     }
 }

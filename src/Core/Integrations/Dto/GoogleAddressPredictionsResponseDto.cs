@@ -1,12 +1,13 @@
 ﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Tickmill.Integrations.Google.Core.Integrations.Dto
 {
     public class GoogleAddressPredictionsResponseDto
     {
-        [JsonProperty("predictions")]
+        [JsonPropertyName("predictions")]
         public List<GoogleAddressPredictionDto> Predictions { get; set; }
-        [JsonProperty("status")]
+        [JsonPropertyName("status")]
         public string Status { get; set; }
     }
 }

@@ -16,12 +16,12 @@ namespace Tickmill.Integrations.Google.API.Controllers
             _dispatcher = dispatcher;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<List<AddressDto>>> Get([FromQuery] GetAddressPredictions query, CancellationToken token)
-            => Ok(await _dispatcher.QueryAsync(query, token));
+        [HttpGet("search")]
+        public async Task<ActionResult<List<AddressDto>>> Get([FromQuery] GetAddressPredictions GetAddressPredictions, CancellationToken token)
+            => Ok(await _dispatcher.QueryAsync(GetAddressPredictions, token));
 
         [HttpGet("details")]
-        public async Task<ActionResult<List<AddressDetailsDto>>> GetDetails ([FromQuery] GetAddressDetails query, CancellationToken token)
+        public async Task<ActionResult<List<AddressDetailsDto>>> GetDetails([FromQuery] GetAddressDetails query, CancellationToken token)
           => Ok(await _dispatcher.QueryAsync(query, token));
     }
 }
