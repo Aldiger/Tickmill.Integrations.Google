@@ -21,7 +21,7 @@ namespace Tickmill.Integrations.Google.API.Controllers
             => Ok(await _dispatcher.QueryAsync(query));
 
         [HttpGet("details")]
-        public async Task<ActionResult<List<AddressDto>>> GetDetails ([FromQuery] GetAddressPredictions query)
+        public async Task<ActionResult<List<AddressDetailsDto>>> GetDetails ([FromQuery] GetAddressDetails query)
           => Ok(await _dispatcher.QueryAsync(query));
     }
 }
