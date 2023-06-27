@@ -6,3 +6,5 @@
 *bin
 *obj
 
+/scripts/dotnet-test.sh
+/.gitignore
