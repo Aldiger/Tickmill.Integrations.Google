@@ -2,9 +2,11 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.Hosting;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Tests.Integration.Common
 {
+    [ExcludeFromCodeCoverage]
     public class CustomWebApplicationFactory<T> : WebApplicationFactory<T> where T : class
     {
         protected override IHostBuilder CreateHostBuilder()

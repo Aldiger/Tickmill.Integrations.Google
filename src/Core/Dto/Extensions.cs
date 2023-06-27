@@ -19,7 +19,7 @@ namespace Tickmill.Integrations.Google.Core.Dto
         public static AddressDetailsDto? ToDto(this GoogleAddressDetailsResponseDto addressDetails)
         {
             if (addressDetails is null)
-                return null;
+                return default;
 
             return new AddressDetailsDto
             {
@@ -27,7 +27,6 @@ namespace Tickmill.Integrations.Google.Core.Dto
                 Street = addressDetails.Result.AddressComponents.FirstOrDefault(x => x.Types.Any(x => x.ToLower() == "route"))?.LongName,
                 Country = addressDetails.Result.AddressComponents.FirstOrDefault(x => x.Types.Any(x => x.ToLower() == "country"))?.LongName,
                 PostCode = addressDetails.Result.AddressComponents.FirstOrDefault(x => x.Types.Any(x => x.ToLower() == "postal_code"))?.LongName
-
             };
         }
     }

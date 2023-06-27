@@ -8,9 +8,11 @@ using Xunit;
 using Tickmill.Integrations.Google.Core.Queries;
 using System.Collections.Generic;
 using Tickmill.Integrations.Google.Core.Dto;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Google.Tests.Integration.Controller
 {
+    [ExcludeFromCodeCoverage]
     public class AddressControllerTests : ControllerTestsBase
     {
 
@@ -22,10 +24,10 @@ namespace Google.Tests.Integration.Controller
                 Search = "a",
                 SessionToken = Guid.NewGuid().ToString()
             };
-            var response =await RequestSearchAddressAsync(request);
+            var response = await RequestSearchAddressAsync(request);
 
             response.IsSuccessStatusCode.ShouldBeTrue();
-            var dto = await ReadAsync<List<AddressDto>> (response);
+            var dto = await ReadAsync<List<AddressDto>>(response);
             dto.ShouldNotBeNull();
         }
 

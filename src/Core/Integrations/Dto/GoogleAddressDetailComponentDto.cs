@@ -11,5 +11,4 @@ namespace Tickmill.Integrations.Google.Core.Integrations.Dto
         [JsonPropertyName("types")]
         public List<string> Types { get; set; }
     }
-
 }

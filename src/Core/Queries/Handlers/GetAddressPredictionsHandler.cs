@@ -21,14 +21,14 @@ namespace Tickmill.Integrations.Google.Core.Queries.Handlers
 
         public async Task<List<AddressDto>> HandleAsync(GetAddressPredictions query, CancellationToken token)
         {
-            if ( string.IsNullOrEmpty(query.Search))
+            if (string.IsNullOrEmpty(query.Search))
             {
                 throw new SearchCannotBeEmptyException();
             }
 
             var response = await _googleService.AddressPredictions(query.Search, query.SessionToken, token);
 
-            if (response is null || string.IsNullOrEmpty(response.Status) || response.Status.ToLower() != "ok" )
+            if (response is null || string.IsNullOrEmpty(response.Status) || response.Status.ToLower() != "ok")
             {
                 throw new InvalidSearchException(query.Search);
             }

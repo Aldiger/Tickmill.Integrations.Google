@@ -9,7 +9,7 @@ using Tickmill.Integrations.Google.Core;
 
 
 namespace Google.API
-{ 
+{
     [ExcludeFromCodeCoverage]
     public class Startup : BaseStartup
     {

@@ -7,7 +7,7 @@ using Tickmill.Integrations.Google.Core.Exceptions;
 namespace Tickmill.Integrations.Google.Core.Integrations
 {
 
-    public class GoogleService: IGoogleService
+    public class GoogleService : IGoogleService
     {
         private readonly ILogger<GoogleService> _logger;
         private GoogleOptions _googleOptions;
