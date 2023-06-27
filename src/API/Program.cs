@@ -23,10 +23,10 @@ namespace Tickmill.Integrations.Google.API
                 })
                 .ConfigureWebHostDefaults(builder => builder
                     .UseStartup<Startup>()
-                    //.UseCertificates()
-                    //.UseLogging()
-                    //.UseVault()
-                    //.UseAppMetrics()
+                    .UseCertificates()
+                    .UseLogging()
+                    .UseVault()
+                    .UseAppMetrics()
                 );
     }
 }

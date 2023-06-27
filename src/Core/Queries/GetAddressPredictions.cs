@@ -6,7 +6,7 @@ namespace Tickmill.Integrations.Google.Core.Queries
     public class GetAddressPredictions: IQuery<List<AddressDto>>
     {
         public string Search { get; set; }
-        public string SessionToken { get; set; }
+        public string SessionToken { get; set; } = string.Empty;
     }
 }
 

@@ -28,7 +28,7 @@ namespace Tickmill.Integrations.Google.Core.Queries.Handlers
 
             var response = await _googleService.AddressDetails(query.PlaceId, query.SessionToken, token);
 
-            if (response is null || response.Status.ToLower() != "ok" )
+            if (response is null || string.IsNullOrEmpty(response.Status) || response.Status.ToLower() != "ok")
             {
                 throw new InvalidPlaceIdException(query.PlaceId);
             }

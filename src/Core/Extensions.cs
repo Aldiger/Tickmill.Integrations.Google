@@ -4,7 +4,6 @@ using Microsoft.Extensions.DependencyInjection;
 
 using System.Runtime.CompilerServices;
 using Tickmill.Common;
-using Tickmill.Common.Test.Utils;
 
 [assembly: InternalsVisibleTo("Tickmill.Integrations.Google.API")]
 [assembly: InternalsVisibleTo("Tickmill.Integrations.Google.Tests.Integration")]

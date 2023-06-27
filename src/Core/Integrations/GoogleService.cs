@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using System.Net.Http.Json;
 using Microsoft.Extensions.Options;
+using Tickmill.Integrations.Google.Core.Exceptions;
 
 namespace Tickmill.Integrations.Google.Core.Integrations
 {
@@ -28,8 +29,8 @@ namespace Tickmill.Integrations.Google.Core.Integrations
             }
             catch (Exception exception)
             {
-                _logger.LogError(exception, exception.Message);
-                return default;
+                _logger.LogError("Google api service error: {exception}", exception);
+                throw new ServiceApiException(exception.Message);
             }
         }
 
@@ -41,8 +42,8 @@ namespace Tickmill.Integrations.Google.Core.Integrations
             }
             catch (Exception exception)
             {
-                _logger.LogError(exception, exception.Message);
-                return default;
+                _logger.LogError("Google api service error: {exception}", exception);
+                throw new ServiceApiException(exception.Message);
             }
         }
     }

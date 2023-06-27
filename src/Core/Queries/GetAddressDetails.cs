@@ -6,7 +6,7 @@ namespace Tickmill.Integrations.Google.Core.Queries
     public class GetAddressDetails : IQuery<AddressDetailsDto>
     {
         public string PlaceId { get; set; }
-        public string SessionToken { get; set; }
+        public string SessionToken { get; set; } = string.Empty;
     }
 }
 
